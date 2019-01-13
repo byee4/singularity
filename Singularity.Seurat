@@ -1,0 +1,5 @@
+Bootstrap: docker
+From: brianyee/r-seurat
+
+%runscript
+  R
