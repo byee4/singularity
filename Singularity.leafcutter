@@ -1,0 +1,9 @@
+Bootstrap: docker
+From: brianyee/r-leafcutter
+
+%setup
+  mkdir /oasis
+  mkdir /projects
+
+%runscript
+  R
