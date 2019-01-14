@@ -1,7 +1,7 @@
 Bootstrap: docker
 From: brianyee/r-leafcutter
 
-%setup
+%post
   mkdir /oasis
   mkdir /projects
 
