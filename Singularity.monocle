@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: brianyee/r-seurat
+From: brianyee/r-monocle
 
 %post
   mkdir /oasis
