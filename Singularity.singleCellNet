@@ -1,0 +1,11 @@
+Bootstrap: docker
+From: brianyee/r-singlecellnet
+
+%environment
+  XDG_RUNTIME_DIR=""
+  export XDG_RUNTIME_DIR
+%post
+  mkdir /oasis
+  mkdir /projects
+%runscript
+  jupyter notebook --NotebookApp.ip=$(hostname --ip-address)
