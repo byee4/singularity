@@ -1,0 +1,24 @@
+From:continuumio/miniconda:4.5.4
+Bootstrap:docker
+
+%labels
+    MAINTAINER Phil Ewels <phil.ewels@scilifelab.se>
+    DESCRIPTION Singularity image containing all requirements for the nf-core/rnaseq pipeline
+    VERSION 1.2
+
+%environment
+    PATH=/opt/conda/envs/nf-core-rnaseq-1.2/bin:$PATH
+    export PATH
+
+%files
+    rnaseq/environment.yml /
+
+%post
+    apt-get update && apt-get install -y procps && apt-get clean -y
+    /opt/conda/bin/conda install conda=4.6.7
+    /opt/conda/bin/conda env create -f /environment.yml
+    /opt/conda/bin/conda clean -a
+    mkdir /oasis
+    mkdir /projects
+    mkdir /N
+
